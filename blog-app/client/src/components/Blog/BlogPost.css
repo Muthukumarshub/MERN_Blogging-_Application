@@ -1,0 +1,91 @@
+.blog-post-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.blog-post {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.blog-post-header {
+    margin-bottom: 2rem;
+}
+
+.blog-post-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.post-meta {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.blog-post-image {
+    float: right;
+    margin: 0 0 2rem 2rem;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;  /* Reduced fixed width */
+    height: 200px; /* Fixed height for consistency */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This ensures the image covers the area without distortion */
+    display: block;
+}
+
+.blog-post-content {
+    line-height: 1.8;
+    color: #333;
+    font-size: 1.1rem;
+    overflow: auto; /* This ensures content flows around the floated image */
+}
+
+.blog-post-loading,
+.blog-post-error,
+.blog-post-not-found {
+    text-align: center;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Add clearfix to prevent layout issues */
+.blog-post::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Make it responsive for smaller screens */
+@media (max-width: 768px) {
+    .blog-post-image {
+        float: none;
+        margin: 2rem 0;
+        width: 100%;
+        height: 250px;
+    }
+}
