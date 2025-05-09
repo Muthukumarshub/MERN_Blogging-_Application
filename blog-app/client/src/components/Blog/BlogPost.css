@@ -1,62 +1,225 @@
 .blog-post-container {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
 }
 
 .blog-post {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
     padding: 2rem;
 }
 
+/* Enhanced Header Styles */
 .blog-post-header {
+    padding: 3rem 2.5rem 2rem;
+    text-align: center;
+    border-bottom: 2px solid #f0f0f0;
     margin-bottom: 2rem;
+    background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+    position: relative;
 }
 
 .blog-post-header h1 {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 1rem;
+    font-size: 3rem;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .post-meta {
-    color: #666;
-    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: inline-block;
+}
+
+.post-info {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    color: #4a4a4a;
+    font-size: 1rem;
+}
+
+.post-info span {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.5rem 1rem;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease;
+}
+
+.post-info span:hover {
+    transform: translateY(-2px);
+}
+
+.post-info i {
+    color: #0066cc;
+    font-size: 1.1rem;
+}
+
+.post-category {
+    color: #0066cc;
+    font-weight: 600;
+    border: 2px solid #e6f0ff;
 }
 
 .blog-post-image {
+    width: 100%;
+    max-height: 500px;
+    overflow: hidden;
+    margin-bottom: 2rem;
     float: right;
     margin: 0 0 2rem 2rem;
     border-radius: 8px;
-    overflow: hidden;
-    width: 300px;  /* Reduced fixed width */
-    height: 200px; /* Fixed height for consistency */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .blog-post-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* This ensures the image covers the area without distortion */
+    object-fit: cover;
+    transition: transform 0.3s ease;
     display: block;
 }
 
+.blog-post-image img:hover {
+    transform: scale(1.02);
+}
+
 .blog-post-content {
+    padding: 2.5rem;
     line-height: 1.8;
-    color: #333;
+    color: #2c3e50;
     font-size: 1.1rem;
-    overflow: auto; /* This ensures content flows around the floated image */
+    overflow: auto;
+}
+
+.blog-post-content p {
+    margin-bottom: 1.5rem;
+}
+
+/* Enhanced Footer Styles */
+.blog-post-footer {
+    padding: 2rem 2.5rem;
+    border-top: 2px solid #f0f0f0;
+    background: linear-gradient(to top, #ffffff, #f8f9fa);
+    margin-top: 3rem;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #0066cc, #0052a3);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.2);
+}
+
+.back-button:hover {
+    background: linear-gradient(135deg, #0052a3, #003d7a);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 102, 204, 0.25);
+}
+
+.back-button i {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.back-button:hover i {
+    transform: translateX(-3px);
+}
+
+/* Additional Footer Elements */
+.post-footer-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.share-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.share-button {
+    padding: 0.8rem;
+    border-radius: 50%;
+    background: #f8f9fa;
+    color: #0066cc;
+    border: 2px solid #e6f0ff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.share-button:hover {
+    background: #0066cc;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 2rem auto;
 }
 
 .blog-post-loading,
 .blog-post-error,
 .blog-post-not-found {
     text-align: center;
-    padding: 2rem;
+    padding: 3rem;
     margin: 2rem auto;
     max-width: 600px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.blog-post-error i,
+.blog-post-not-found i {
+    font-size: 3rem;
+    color: #dc3545;
+    margin-bottom: 1rem;
 }
 
 button {
@@ -80,8 +243,54 @@ button:hover {
     clear: both;
 }
 
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 /* Make it responsive for smaller screens */
 @media (max-width: 768px) {
+    .blog-post-container {
+        margin: 2rem auto;
+    }
+
+    .blog-post-header {
+        padding: 2rem 1.5rem 1.5rem;
+    }
+
+    .blog-post-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .blog-post-content {
+        padding: 1.5rem;
+        font-size: 1rem;
+    }
+
+    .post-info {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .post-info span {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .post-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .back-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .share-buttons {
+        flex-wrap: wrap;
+    }
+
     .blog-post-image {
         float: none;
         margin: 2rem 0;

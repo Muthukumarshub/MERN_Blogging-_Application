@@ -1,15 +1,18 @@
 .header {
     background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 1.25rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,55 +20,101 @@
 
 .logo {
     text-decoration: none;
-    color: #2d3748;
+    color: #1a202c;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.logo:hover {
+    transform: translateY(-2px);
 }
 
 .logo h1 {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.75rem;
+    font-weight: 800;
     margin: 0;
+    letter-spacing: -0.025em;
+    background: linear-gradient(90deg, #3182ce 0%, #63b3ed 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .nav-link {
     text-decoration: none;
     color: #4a5568;
-    font-weight: 500;
+    font-weight: 600;
+    position: relative;
+    padding: 0.5rem 0;
     transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #4299e1;
+    color: #3182ce;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #3182ce;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
 }
 
 .user-menu {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.25rem;
 }
 
 .username {
     color: #2d3748;
-    font-weight: 500;
+    font-weight: 600;
+    position: relative;
+    padding: 0.5rem 0.75rem;
+    border-radius: 20px;
+    background-color: rgba(237, 242, 247, 0.7);
+    transition: all 0.3s ease;
+}
+
+.username:hover {
+    background-color: rgba(226, 232, 240, 1);
 }
 
 .logout-button {
-    background: #4299e1;
+    background: linear-gradient(90deg, #3182ce 0%, #4299e1 100%);
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
+    padding: 0.625rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(66, 153, 225, 0.3);
 }
 
 .logout-button:hover {
-    background: #3182ce;
+    background: linear-gradient(90deg, #2c5282 0%, #2b6cb0 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(66, 153, 225, 0.4);
+}
+
+.logout-button:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(66, 153, 225, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -79,5 +128,14 @@
     
     .username {
         display: none;
+    }
+    
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+    
+    .logout-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
     }
 }
