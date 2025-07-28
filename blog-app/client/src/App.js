@@ -19,6 +19,7 @@ const RootLayout = () => {
       <Header />
       {/* Outlet will render the child routes */}
       <Outlet />
+
       <Footer />
     </div>
   );

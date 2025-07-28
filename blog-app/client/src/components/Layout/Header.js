@@ -16,7 +16,7 @@ const Header = () => {
         <header className="header">
             <div className="header-container">
                 <Link to="/" className="logo">
-                    <h1>Blog App</h1>
+                    <h1>Bloggifi</h1>
                 </Link>
                 
                 <nav className="nav-menu">
